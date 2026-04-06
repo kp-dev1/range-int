@@ -101,21 +101,19 @@ Returns `True` if the relative position falls within `[low, high]`.
 RangeInt(50, 0, 100).is_between(0.25, 0.75)  # True
 ```
 
----
+#### `on_percentage(percentage, directional, through)`
 
-### Callbacks
-
-Register a function to fire whenever the value crosses a relative threshold.
-
+Register a function to fire whenever the value crosses a relative threshold if through is set to False it will only fire if it is exact. if through is set to True it will fire if it passes through. Directional controls if it fires when its coming up 30 - 70 or down 70 - 30.
 ```python
-r = RangeInt(0, 0, 100)
-r._callbacks[0.5] = lambda: print("crossed 50%!")
-
-r.value = 60   # prints "crossed 50%!"
-r.value = 30   # prints "crossed 50%!" (crossed back down)
+health = RangeInt(0, 0, 100)
+def low_health():
+  print("Low Health: {health.value()}HP remaining")
+health.on_percentage(0.5, low_health, directional="down", through=True)
+health += 70
+health -= 40 # Low Health: 30HP remaining
 ```
 
----
+
 
 ### Operators
 
