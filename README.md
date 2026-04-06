@@ -3,7 +3,7 @@
 A clamped numeric type for Python. Values are automatically kept within a `[min, max]` range — all arithmetic, assignment, and mutations clamp silently. Built for game dev, UI sliders, stat systems, animation, or anywhere you want a number that stays in bounds.
 
 ```python
-from rangeint import RangeInt
+from rangedint import RangeInt
 
 hp = RangeInt(100, 0, 100)
 hp -= 999
