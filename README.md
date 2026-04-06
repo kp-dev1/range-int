@@ -112,6 +112,7 @@ health.on_percentage(0.5, low_health, directional="down", through=True)
 health += 70
 health -= 40 # Low Health: 30HP remaining
 ```
+Note: Only one function can be assigned to each percentage level
 
 
 
