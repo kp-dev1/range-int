@@ -15,7 +15,7 @@ print(hp)  # 0  — never goes below min
 ## Install
 
 ```bash
-pip install rangeint
+pip install rangedint
 ```
 
 ---
